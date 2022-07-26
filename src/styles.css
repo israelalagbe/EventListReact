@@ -1,0 +1,35 @@
+body {
+  padding: 0px;
+  margin: 0px;
+}
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3.5em;
+  font-weight: bolder;
+}
+
+h2 {
+  font-size: 2.5em;
+}
+
+button {
+  font-size: 1.5rem;
+  padding: 0.3rem 0.6rem;
+}
+
+.pb-1_5 {
+  padding-bottom: 1.5rem;
+}
+
+.event-item p {
+  font-size: 2rem;
+}
+
+hr {
+  border: 1.5px solid black;
+  width: 100%;
+}
