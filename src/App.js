@@ -1,39 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles.css";
 import Events from "./events.json";
+import { EventItem } from "./components/EventItem";
+import { Header } from "./components/Header";
+import { FilterComponent } from "./components/FilterComponent";
 
 export default function App() {
+  const [events, setEvents] = useState(Events);
+
   return (
     <main className="App">
-      <header>
-        <h1>React App</h1>
-        <h2>Filter events by city and price</h2>
-      </header>
-      <section className="filter">
-        <div className="pb-1_5">
-          <button>Reset Form</button>
-        </div>
-        <div>
-          <button>Apply filter</button>
-        </div>
-      </section>
+      <Header />
+      <FilterComponent events={events} setEvents={setEvents} />
       <section className="event-list">
         <h1>Event Results</h1>
-        {Events.map((event) => (
+        {events.map((event) => (
           <EventItem event={event} key={event.id} />
         ))}
       </section>
     </main>
-  );
-}
-
-function EventItem({ event }) {
-  return (
-    <div className="event-item">
-      <p>{event.name}</p>
-      <p>{event.city}</p>
-      <p>{event.minPrice}</p>
-      <hr />
-    </div>
   );
 }
